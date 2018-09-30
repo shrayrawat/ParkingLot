@@ -15,4 +15,4 @@ fileName=$1
 
 echo $fileName
 
-java -jar ../target/MultilevelParkingLot-0.0.1-SNAPSHOT-shaded.jar $fileName
+java -jar ../target/ParkingLot-0.0.1-SNAPSHOT-shaded.jar $fileName
