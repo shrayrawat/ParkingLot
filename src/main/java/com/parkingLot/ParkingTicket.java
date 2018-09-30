@@ -35,4 +35,30 @@ public class ParkingTicket {
 		return parkingTimestamp;
 	}
 
+	/*
+	 * can be used in case when we have more than one level with multiple rows
+	 * in each level.And also when vehicle can occupy multiple parking spots.
+	 * 
+	 */
+	// @Override
+	// public String toString() {
+	// String spotNumStr = "";
+	// for (ParkingSpot spot : vehicle.getParkingSpots()) {
+	// spotNumStr = spotNumStr + "Level:" + spot.getLevel() + "Row:" +
+	// spot.getRow() + "Number:"
+	// + spot.getSpotNumber();
+	// }
+	// return "Allocated slot number:" + spotNumStr;
+	// }
+	/*
+	 * For depicting the simple flow with one level and one row i am using this
+	 * method.Here assumption is vehicle will occupy only one parking spot.
+	 * 
+	 * 
+	 */
+	@Override
+	public String toString() {
+		return "Allocated slot number:" + vehicle.getParkingSpots().get(0).getSpotNumber();
+	}
+
 }

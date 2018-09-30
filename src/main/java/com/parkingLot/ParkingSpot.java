@@ -73,9 +73,27 @@ public class ParkingSpot {
 	 * Remove vehicle from spot, and notify level that a new spot is available
 	 */
 	public void freeSpot() {
+		/**
+		 * For the case with multiple levels of car park
+		 */
+		// System.out.println("Slot number:" + getLevel() + "-" + getRow() + "-"
+		// + getSpotNumber() + " is free.");
+
+		/**
+		 * For the test case mentioned in problem stmt.
+		 */
+		System.out.println("Slot number " + getSpotNumber() + " is free.");
+		level.spotFreed();
+		vehicle = null;
 	}
 
 	public void print() {
+		if (vehicle == null) {
+			System.out.print("Empty Slot");
+		} else {
+			System.out.print(spotNumber + "                ");
+			vehicle.print();
+		}
 	}
 
 	@Override

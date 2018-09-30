@@ -24,22 +24,31 @@ public class ParkingLot {
 	 * Park the vehicle in a spot (or multiple spots). Return false if failed.
 	 */
 	public ParkingTicket parkVehicle(Vehicle vehicle) {
+		ParkingTicket ticket;
+		for (int i = 0; i < levels.length; i++) {
+			ticket = levels[i].parkVehicle(vehicle);
+			return ticket;
+		}
 		return null;
 	}
 
 	public void print() {
 		for (int i = 0; i < levels.length; i++) {
+			// System.out.println("Level" + i + ": ");
 			levels[i].print();
 			System.out.println("");
 		}
+		// System.out.println("");
 	}
 
 	/*
-	 * This method is just to display the simple flow of the problem statement
+	 * This method is just to display the simple flow of the problem statment
 	 * where we use only spotNumber to free it up otherwise we will use ticketId
 	 * to free the spots.
 	 */
 	public Vehicle removeVehicle(int spotNumber) {
-		return null;
+		Vehicle removedVehicle = levels[0].getSpots()[spotNumber].getVehicle();
+		levels[0].getSpots()[spotNumber].freeSpot();
+		return removedVehicle;
 	}
 }
